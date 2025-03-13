@@ -1,0 +1,6 @@
+{
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:appPackage": "com.android.settings",
+    "appium:appActivity": "com.android.settings.Settings"
+  }
