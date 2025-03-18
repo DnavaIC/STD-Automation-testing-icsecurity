@@ -9,6 +9,7 @@ The purpose of this repository is to provide new testers with installation guida
 2. Install SDK and JDK
 3. Install Appium inspector
 4. Configure Appium inspector
+5. Run your first test
 
 
 ## Downloads
@@ -106,13 +107,67 @@ Appium Inspector is a GUI assistant tool for Appium, providing visual inspection
 
 <img src="/docs/img/img5.png" alt="Image 5" style="max-width: 100%; height: auto;">
 
-The installation is pretty simple, just download the file corresponding to your system. 
+Installation is quite simple. Download the file for your system and click "Next" through the entire process.
+> [!IMPORTANT]  
+> The app is not signed, if you have doubts follow this simple guide: [Installation - Appium Inspector](https://appium.github.io/appium-inspector/latest/quickstart/installation/#windows)
 
-> IMPORTANT: the app is not signed, if you have doubts follow this simple guide: [Installation - Appium Inspector](https://appium.github.io/appium-inspector/latest/quickstart/installation/#windows)
-> 
+## Configure Appium inspector
 
-PENDIENTE: Agregar instrucciones de como se configura
+1. In a console, type `appium` command and you will see a URL.
+```
+[Appium] You can provide the following URLs in your client code to connect to this server:
+        http://192.168.11.131:4723/
+        http://127.0.0.1:4723/ (only accessible from the same host)
+```
+2. Set your URL in Appium Inspector
 
----
+<img src="/docs/img/img9.png" alt="Image 9" style="max-width: 100%; height: auto;">
 
-PENDIENTE: Agregar repositorio para probar tu instalacion
+3. Copy the capabilities and paste inside JSON Representation secction.
+
+```
+{
+  "platformName": "Android",
+  "automationName": "UiAutomator2",
+  "deviceName": "Android",
+  "appPackage": "com.icsecurity.noakiosk",
+  "appActivity": "com.icsecurity.fieldOfficerApp.MainActivity",
+  "language": "en",
+  "locale": "US"
+}
+```
+
+<img src="/docs/img/img7.png" alt="Image 7" style="max-width: 100%; height: auto;">
+<img src="/docs/img/img8.png" alt="Image 8" style="max-width: 100%; height: auto;">
+
+4. initiate an Android Virtual Device (AVD), also you can connect to a physical Android device.
+
+<img src="/docs/img/img10.png" alt="Image 10" style="max-width: 100%; height: auto;">
+
+If you wish to confirm that your device is operating correctly and is accessible through ADB, use the command adb devices.
+
+    ```
+    console ❯ adb devices
+
+    List of devices attached
+    emulator-5554   
+    ```
+
+5. Just click "Start session" button in Appium Inspector.
+
+Now you can instect the app in order to find elements id, xpath, class, etc.
+
+## Run your first test
+
+1. Clone the repository
+
+```
+git clone https://github.com/DnavaIC/STD-Appium-intercon.git
+```
+
+2. In the root of the repositor run `npm install` in order to download all the libraries needed.
+
+3. Once all is set, you can run the sample test using `python test.py`
+
+>[!NOTE]
+> If you have connected appium inspector you may pressent problems running your test. 
