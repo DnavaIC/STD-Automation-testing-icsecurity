@@ -7,6 +7,8 @@ The purpose of this repository is to provide new testers with installation guida
 
 1. Install Appium
 2. Install SDK and JDK
+3. Install Appium inspector
+4. Configure Appium inspector
 
 
 ## Downloads
@@ -64,35 +66,35 @@ The purpose of this repository is to provide new testers with installation guida
 
 1. Install [Android studio](https://developer.android.com/studio?hl=es-419) 
 
-1. Open Android studio and search for SDK Manager. More actions > SDK Manager
-2. Copy the path to your SDK
+2. Open Android studio and search for SDK Manager. More actions > SDK Manager
+3. Copy the path to your SDK
 
 
-<img src="/docs/img/image%201.png" alt="Image 1" style="max-width: 100%; height: auto;">
-<img src="/docs/img/image.png" alt="Image 2" style="max-width: 100%; height: auto;">
+<img src="/docs/img/img1.png" alt="Image 1" style="max-width: 100%; height: auto;">
+<img src="/docs/img/img2.png" alt="Image 2" style="max-width: 100%; height: auto;">
 
-1. In windows search for “Environment variables”.
+4. In windows search for “Environment variables”.
 
 And go to Advanced options > Environment variables > New…
 
-1. Create a new variable with the name: ANDROID_HOME and set your path: 
+5. Create a new variable with the name: ANDROID_HOME and set your path: 
     
     C:\Users\<your username>\AppData\Local\Android\Sdk\platform-tools
     
 
-![image.png](image%202.png)
+<img src="/docs/img/img3.png" alt="Image 3" style="max-width: 100%; height: auto;">
 
 1. Now lets download java developers kit binary archive —> [https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.zip](https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.zip)
 2. Create a new folder in your windows main root and unzip the JDK
 3. navigate to the bin folder, which is inside JDK and copy the path
 4. As we do with Android_home (SDK), create a new envirnomnet variable called JAVA_HOME
     
-    ![image.png](image%203.png)
+<img src="/docs/img/img4.png" alt="Image 4" style="max-width: 100%; height: auto;">
+
     
 5. The last step is pretty simple, inside your system variables open “path” and add both paths, SDK and JDK
     
-    ![image.png](image%204.png)
-    
+<img src="/docs/img/img6.png" alt="Image 6" style="max-width: 100%; height: auto;">
 
 ---
 
@@ -102,7 +104,7 @@ What is Appium inspector?
 
 Appium Inspector is a GUI assistant tool for Appium, providing visual inspection of the application under test. It can show the application page screenshot along with its page source, and includes various features for interacting with the app.
 
-![image.png](image%205.png)
+<img src="/docs/img/img5.png" alt="Image 5" style="max-width: 100%; height: auto;">
 
 The installation is pretty simple, just download the file corresponding to your system. 
 
