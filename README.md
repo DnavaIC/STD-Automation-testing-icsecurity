@@ -5,11 +5,12 @@ The purpose of this repository is to provide new testers with installation guida
 
 ## Index
 
-1. Install Appium
-2. Install SDK and JDK
-3. Install Appium inspector
-4. Configure Appium inspector
-5. Run your first test
+1. [Install Appium](#installing-appium)
+2. [Install SDK and JDK](#sdk--jdk)
+3. [Install Appium inspector](#appium-inspector)
+4. [Configure Appium inspector](#configure-appium-inspector)
+5. [Run your first test](#run-your-first-test)
+6. Robot framework + Appium
 
 
 ## Downloads
@@ -22,7 +23,7 @@ The purpose of this repository is to provide new testers with installation guida
 - [Python](https://www.python.org/downloads/)
 - [Android studio](https://developer.android.com/studio?hl=es-419) + SDK
 - [JDK (path y JAVA_HOME)](https://www.oracle.com/java/technologies/downloads/#jdk23-windows)
-
+- [Robot Framework](https://robotframework.org/)
 
 ## Installing Appium
 
@@ -171,3 +172,5 @@ git clone https://github.com/DnavaIC/STD-Appium-intercon.git
 
 >[!NOTE]
 > If you have connected appium inspector you may pressent problems running your test. 
+
+## Robot Framework + Appium
