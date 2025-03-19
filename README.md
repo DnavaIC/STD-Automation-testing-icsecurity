@@ -119,7 +119,7 @@ Installation is quite simple. Download the file for your system and click "Next"
         http://192.168.11.131:4723/
         http://127.0.0.1:4723/ (only accessible from the same host)
 ```
-2. Set your URL in Appium Inspector
+2. Set your URL in Appium Inspector or you can try using "localhost"
 
 <img src="/docs/img/img9.png" alt="Image 9" style="max-width: 100%; height: auto;">
 
