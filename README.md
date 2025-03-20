@@ -2,7 +2,7 @@
 
 This repository is an initiative to kickstart the mobile automation of testing processes at Inter-Con Security, a company that previously had no automation in this area. It also serves as a proposal for adopting automation practices. Please note that all the work here is currently under development.
 
-## Set up your project and start scripting. (recomended)
+## Set up your project and start scripting. (recommended)
 
 In case this is your first time automating cases in icsecurity mobile, it is highly recommended that you take a look at the complete guide found in the getting started guide. It will save you a lot of research, trial and error. 
 Please go to [IC security - mobile automation wiki](https://github.com/DnavaIC/STD-Appium-intercon/wiki)
