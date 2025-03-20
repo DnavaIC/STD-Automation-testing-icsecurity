@@ -13,6 +13,9 @@ This repository is an initiative to kickstart the mobile automation of testing p
 ```
 npm install appium
 ```
+2. Set your URL in Appium Inspector or you can try using "localhost"
+
+<img src="/docs/img/img9.png" alt="Image 9" style="max-width: 100%; height: auto;">
 ```
 pip install robotframework
 ```
