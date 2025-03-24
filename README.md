@@ -53,7 +53,7 @@ Connect your hardware device / turn on your emulation device.
 4. Run your test
 clone the repository and run 
 ```
-robot tests\inter-con-app\sample-robot-appium.robot
+npm test
 ```
 
 
