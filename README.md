@@ -21,7 +21,7 @@ pip install robotframework
 pip install robotframework-appiumlibrary
 ```
 
-2. Install Android Studio, which includes SDK and installs JDK binaries.
+2. Install Android Studio, which includes SDK and install JDK binarie.
 
 Once you install your tools and extract the corresponding path, create new system variables.
 
