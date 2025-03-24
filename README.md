@@ -15,6 +15,9 @@ Please go to [IC security - mobile automation wiki](https://github.com/DnavaIC/S
 npm i --location=global appium
 ```
 ```
+appium driver install uiautomator2
+```
+```
 pip install robotframework
 ```
 ```
