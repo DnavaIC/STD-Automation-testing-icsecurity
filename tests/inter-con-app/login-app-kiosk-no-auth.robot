@@ -12,3 +12,4 @@ Open NO AUTH application and accept all permissions
     Accept android location permission
     Accept android activity permission
     Configure all time location
+    Input phone number and login
