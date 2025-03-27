@@ -13,7 +13,7 @@ ${ANDROID_APP_ACTIVITY_KIOSKNA}       com.icsecurity.fieldOfficerApp.MainActivit
 
 *** Keywords ***
 
-Open Android Inter-con security Application KIOSK-NA
+Android Inter-con security Application KIOSK-NA
   Open Application   http://localhost:4723     
   ...  automationName=${ANDROID_AUTOMATION_NAME}
   ...  platformName=${ANDROID_PLATFORM_NAME}

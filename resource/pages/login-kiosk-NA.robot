@@ -40,9 +40,10 @@ Input phone number and login
   Input Text    ${PHONE_INPUT}    7028597055    #Harcoded!!!!
   Capture Page Screenshot
   Click Element    ${CONTINUE_LOGIN}
-  
   # Allow phone calls if element is present
   Wait Until Element Is Visible    ${ALLOW_ACTIVITY}    timeout=10
   Click Element    ${ALLOW_ACTIVITY}
+ 
+Home login is displayed
   Wait Until Element Is Visible    ${LABEL_HOME}    timeout=10
   Capture Page Screenshot
