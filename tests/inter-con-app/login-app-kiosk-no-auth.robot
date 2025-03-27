@@ -7,7 +7,9 @@ Resource    ../../resource/pages/login-kiosk-NA.robot
 ${RESOURCE_PATH}    D:/Repos/STD-Mobile-testing-icsecurity/resource
 
 *** Test Cases ***
-Open NO AUTH application and accept all permissions
+Login Inter-Con security App NO AUTH
     Open Android Inter-con security Application KIOSK-NA
-    Accept android device permission
+    Accept android location permission
+    Accept android activity permission
     Configure all time location
+    Input phone number and login
