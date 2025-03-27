@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation  steps for login page
-Library  AppiumLibrary    timeout=10
+Library  AppiumLibrary  timeout=10
 Resource    ../utils/capturePage.robot
 
 *** Variables ***
@@ -18,22 +18,22 @@ ${LABEL_HOME}            accessibility_id=Home
 *** Keywords ***
 Accept android location permission
   Wait Until Page Contains Element  ${WHILE_USING_APP} 
-  Capture Screenshot
+  Capture Page Screenshot
   Click Element  ${WHILE_USING_APP}
 
 Accept android activity permission  
   Wait Until Page Contains Element    ${ALLOW_ACTIVITY}
-  Capture Screenshot
+  Capture Page Screenshot
   Click Element  ${ALLOW_ACTIVITY}
 
 Configure all time location
   Wait Until Element Is Visible    ${CONFIGURE_LOCATION}
-  Capture Screenshot
+  Capture Page Screenshot
   Click Element  ${CONFIGURE_LOCATION}
   Click Element  ${ALLOW_ALL_TIME}
-  Capture Screenshot
+  Capture Page Screenshot
   Click Element  ${ANDROID_BACK} 
-  Capture Screenshot
+  Capture Page Screenshot
 
 Input phone number and login
   Wait Until Element Is Visible    ${PHONE_INPUT}
@@ -45,3 +45,4 @@ Input phone number and login
   Wait Until Element Is Visible    ${ALLOW_ACTIVITY}    timeout=10
   Click Element    ${ALLOW_ACTIVITY}
   Wait Until Element Is Visible    ${LABEL_HOME}    timeout=10
+  Capture Page Screenshot
