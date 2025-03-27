@@ -8,8 +8,9 @@ ${RESOURCE_PATH}    D:/Repos/STD-Mobile-testing-icsecurity/resource
 
 *** Test Cases ***
 Login Inter-Con security App NO AUTH
-    Open Android Inter-con security Application KIOSK-NA
-    Accept android location permission
-    Accept android activity permission
-    Configure all time location
-    Input phone number and login
+    GIVEN Android Inter-con security Application KIOSK-NA
+    AND Accept android location permission
+    AND Accept android activity permission
+    AND Configure all time location
+    AND Input phone number and login
+    THEN home login is displayed
