@@ -1,11 +1,13 @@
 {
   "dependencies": {
     "appium": "^2.17.1",
+    "dotenv": "^16.4.7",
     "global": "^4.4.0"
   },
   "devDependencies": {
     "appium-uiautomator2-driver": "^4.1.5"
-  }, "scripts": {
+  },
+  "scripts": {
     "demo-mobile": "robot --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/login-app-kiosk-no-auth.robot"
   }
 }
