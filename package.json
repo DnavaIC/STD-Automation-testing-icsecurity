@@ -8,6 +8,7 @@
     "appium-uiautomator2-driver": "^4.1.5"
   },
   "scripts": {
-    "demo-mobile": "robot --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/login-app-kiosk-no-auth.robot"
+    "demo-mobile": "robot --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/login-app-kiosk-no-auth.robot",
+    "demo-web": "robot --xunit junit-report.xml --outputdir ./output/reports tests/gantt/login-gantt-no-2FA.robot"
   }
 }

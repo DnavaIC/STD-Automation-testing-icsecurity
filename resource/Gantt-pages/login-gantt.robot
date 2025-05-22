@@ -18,11 +18,11 @@ Click Corporate login
     Click    //input[@aria-label='ICS-Corporate-Login'] >> nth=0
 
 Input login credentials
-    Fill Text    //input[@type='email']    ${USERNAME}
-    Click    //input[@type='submit']
-    Fill Secret    //input[@name='passwd']    ${PASSWORD}
-    Click    //input[@type='submit']
+    Fill Text        //input[@type='email']    ${USERNAME}
+    Click            //input[@type='submit']
+    Fill Secret      //input[@name='passwd']    ${PASSWORD}
+    Click            //input[@type='submit']
     Wait For Elements State    //div[contains(@class, 'ant-notification-notice-message')]    visible    10
-    Get Text    //div[contains(@class, 'ant-notification-notice-message')]
+    Get Text         //div[contains(@class, 'ant-notification-notice-message')]
     Wait For Elements State    //img[@src='/gantt.svg']    hidden    15
     Take Screenshot

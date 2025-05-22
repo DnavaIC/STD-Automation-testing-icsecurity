@@ -4,7 +4,7 @@ Library  AppiumLibrary  timeout=10
 Resource    ../utils/capturePage.robot
 
 *** Variables ***
-
+${PHONE_NUMBER}          7028597055
 ${WHILE_USING_APP}       //*[contains(@resource-id, 'permission_allow_foreground_only_button')]
 ${ALLOW_ACTIVITY}        //*[contains(@resource-id, 'permission_allow_button')]
 ${CONFIGURE_LOCATION}    //*[contains(@resource-id, 'btn_positive_action')]
@@ -37,7 +37,7 @@ Configure all time location
 
 Input phone number and login
   Wait Until Element Is Visible    ${PHONE_INPUT}
-  Input Text    ${PHONE_INPUT}    7028597055    #Harcoded!!!!
+  Input Text    ${PHONE_INPUT}    ${PHONE_NUMBER}
   Capture Page Screenshot
   Click Element    ${CONTINUE_LOGIN}
   # Allow phone calls if element is present

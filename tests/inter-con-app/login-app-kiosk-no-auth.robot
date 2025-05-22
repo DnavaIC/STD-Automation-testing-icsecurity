@@ -1,7 +1,7 @@
 *** Settings ***
 
 Resource    ../../resource/utils/driver.robot
-Resource    ../../resource/pages/login-kiosk-NA.robot
+Resource    ../../resource/mobile-pages/login-kiosk-NA.robot
 
 *** Variables ***
 ${RESOURCE_PATH}    D:/Repos/STD-Mobile-testing-icsecurity/resource
