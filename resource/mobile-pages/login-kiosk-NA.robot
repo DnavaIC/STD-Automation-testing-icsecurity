@@ -1,12 +1,11 @@
 *** Settings ***
 Documentation  steps for login page
 Library  AppiumLibrary  timeout=10
-Resource    ../utils/capturePage.robot
+Resource    ../utils/appiumDriver.robot
 
 *** Variables ***
-
 ${WHILE_USING_APP}       //*[contains(@resource-id, 'permission_allow_foreground_only_button')]
-${ALLOW_ACTIVITY}        //*[contains(@resource-id, 'permission_allow_button')]
+${ALLOW_ALERT}        //*[contains(@resource-id, 'permission_allow_button')]
 ${CONFIGURE_LOCATION}    //*[contains(@resource-id, 'btn_positive_action')]
 ${ALLOW_ALL_TIME}        //*[contains(@resource-id, 'allow_always_radio_button')]
 ${ANDROID_BACK}          //*[contains(@class, 'ImageButton')]
@@ -22,9 +21,9 @@ Accept android location permission
   Click Element  ${WHILE_USING_APP}
 
 Accept android activity permission  
-  Wait Until Page Contains Element    ${ALLOW_ACTIVITY}
+  Wait Until Page Contains Element    ${ALLOW_ALERT}
   Capture Page Screenshot
-  Click Element  ${ALLOW_ACTIVITY}
+  Click Element  ${ALLOW_ALERT}
 
 Configure all time location
   Wait Until Element Is Visible    ${CONFIGURE_LOCATION}
@@ -37,13 +36,16 @@ Configure all time location
 
 Input phone number and login
   Wait Until Element Is Visible    ${PHONE_INPUT}
-  Input Text    ${PHONE_INPUT}    7028597055    #Harcoded!!!!
+  Input Text    ${PHONE_INPUT}    %{PHONE_NUMBER}
   Capture Page Screenshot
   Click Element    ${CONTINUE_LOGIN}
-  # Allow phone calls if element is present
-  Wait Until Element Is Visible    ${ALLOW_ACTIVITY}    timeout=10
-  Click Element    ${ALLOW_ACTIVITY}
- 
-Home login is displayed
-  Wait Until Element Is Visible    ${LABEL_HOME}    timeout=10
-  Capture Page Screenshot
+
+  Wait Until Element Is Visible    ${ALLOW_ALERT}    timeout=15
+  Click Element    ${ALLOW_ALERT}
+
+
+Login to Inter-Con App
+    Accept android location permission
+    Accept android activity permission
+    Configure all time location
+    Input phone number and login
