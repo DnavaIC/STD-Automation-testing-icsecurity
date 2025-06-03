@@ -1,8 +1,12 @@
 node_modules
-no-auth-intercon.apk
+*.apk
 output.xml
 output.json
 report.html
 log.html
 reports
 output
+browser
+.env
+playwright-log.txt
+results/
