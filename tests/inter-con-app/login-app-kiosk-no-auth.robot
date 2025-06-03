@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../../resource/utils/driver.robot
+Resource    ../../resource/utils/appiumDriver.robot
 Resource    ../../resource/mobile-pages/login-kiosk-NA.robot
 
 *** Variables ***
