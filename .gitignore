@@ -1,5 +1,5 @@
 node_modules
-no-auth-intercon.apk
+*.apk
 output.xml
 output.json
 report.html

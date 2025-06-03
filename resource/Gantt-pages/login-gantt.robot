@@ -1,28 +1,31 @@
 *** Settings ***
 Library  Browser
+
 Documentation    A resource file for demo Gantt using playwight library for robot framework, login page.
 
 *** Variables ***
-${page}    https://gantt-qa.bubo.io/#/login
-${USERNAME} =     os.getenv('USERNAME')
-${PASSWORD} =     os.getenv('PASSWORD')
+${PAGE}    https://gantt-qa.bubo.io/#/login  
 
 *** Keywords ***
 Gantt Login Page is open
-    New Page    ${page}
+    [Documentation]    Open the Gantt login page
+    New Page   ${PAGE}
+    Set Viewport Size    1280    800
     Get Text    span    contains    Bubo Gantt Access
 
 Click Corporate login
     Click    //button[@type='button']
-    Wait For Elements State    //input[@aria-label='ICS-Corporate-Login'] >> nth=0    enabled    10
-    Click    //input[@aria-label='ICS-Corporate-Login'] >> nth=0
+    Wait For Elements State    (//input[@value='ICS-Corporate-Login'])[2]    enabled    10
+    Click    (//input[@value='ICS-Corporate-Login'])[2]
 
 Input login credentials
-    Fill Text        //input[@type='email']    ${USERNAME}
+
+    Fill Text    //input[@type='email']    %{GANTT_USERNAME}
+    Take Screenshot
+    Click        //input[@type='submit']
+    Fill Text    //input[@name='passwd']    %{GANTT_PASSWORD}
+    Take Screenshot
     Click            //input[@type='submit']
-    Fill Secret      //input[@name='passwd']    ${PASSWORD}
-    Click            //input[@type='submit']
-    Wait For Elements State    //div[contains(@class, 'ant-notification-notice-message')]    visible    10
-    Get Text         //div[contains(@class, 'ant-notification-notice-message')]
-    Wait For Elements State    //img[@src='/gantt.svg']    hidden    15
+    Log To Console    "Waiting for page to render... (20s)"
+    Sleep    20s
     Take Screenshot
