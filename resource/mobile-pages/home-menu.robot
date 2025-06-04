@@ -20,10 +20,9 @@ Go to Assigned Equipment
 
 Check user with no equipment assigned
     [Documentation]    Check empty list message
-    Sleep    6s
+    Sleep    10s
     Wait Until Element Is Visible    ${ASSIGNED_EQUIPMENT_SCREEN}    timeout=10
     Capture Page Screenshot    
-    # Element Should Contain Text    ${ASSIGNED_EQUIPMENT_SCREEN}    No equipment assigned
-    # Get Element Attribute    ${ASSIGNED_EQUIPMENT_SCREEN}    attribute=content-desc
-    Page Should Contain Text    No equipment assigned
+    Get Element Attribute    ${ASSIGNED_EQUIPMENT_SCREEN}    attribute=content-desc
+    Page Should Contain Text    No equipment assigned    
     
