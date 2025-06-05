@@ -1,5 +1,5 @@
 *** Settings ***
-Library  Browser
+Library    Browser
 Suite Setup  New Browser   browser=${BROWSER}  headless=${HEADLESS}
 Test Setup  New Context  viewport={"width": 1920, "height": 1080}
 Test Teardown  Close Context

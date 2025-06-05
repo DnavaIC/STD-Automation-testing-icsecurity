@@ -15,14 +15,22 @@ Login Inter-Con security App NO AUTH
     AND Accept android activity permission
     AND Configure all time location
     AND Input phone number and login
+    AND Close confirm shift notification
     THEN Home menu is displayed
 
 Check user with no equipment assigned
     [Documentation]    Pre-conditions: User phone number with no equipment assigned
-    [Tags]    demo
+    [Tags]    demo    mobile    kioskNA    Profile
     GIVEN Android Inter-con security Application KIOSK-NA
     AND Login to Inter-Con App
     WHEN Home menu is displayed
     AND Go to Assigned Equipment
     THEN Check user with no equipment assigned
 
+Verify remaining time in Early Clock-Out
+    [Tags]    testing
+    GIVEN Android Inter-con security Application KIOSK-NA
+    AND Login to Inter-Con App
+    WHEN Home menu is displayed
+    AND Get remaining time
+    THEN Verify early Clock-Out time
