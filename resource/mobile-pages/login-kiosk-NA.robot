@@ -44,12 +44,8 @@ Input phone number and login
   Click Element    ${ALLOW_ALERT}
 
 Close confirm shift notification
-  ${IS_VISIBLE}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${CLOSE_WINDOW}    timeout=10s
-  IF    ${IS_VISIBLE}
-    Click Element    ${CLOSE_WINDOW}
-  ELSE
-    Log    Element "notification is not displayed"
-  END
+    Run Keyword And Continue On Failure    Wait Until Page Contains Element  ${CLOSE_WINDOW}    timeout=10s
+    Run Keyword And Continue On Failure    Click Element  ${CLOSE_WINDOW}
   
 Login to Inter-Con App
     Accept android location permission
