@@ -16,4 +16,4 @@ class DemoLibrary:
         minutes_match = re.search(r'(\d+)m', time_string)
         hours = int(hours_match.group(1)) if hours_match else 0
         minutes = int(minutes_match.group(1)) if minutes_match else 0
-        return hours * 60 + minutes
+        return str(hours * 60 + minutes)

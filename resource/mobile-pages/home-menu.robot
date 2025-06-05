@@ -9,7 +9,6 @@ ${ASSIGNED_EQUIPMENT_BTN}    accessibility_id=Assigned\nEquipment
 ${ASSIGNED_EQUIPMENT_SCREEN}    xpath=//android.view.View[@content-desc]
 ${REMAINING_TIME}    //android.view.View[@content-desc][11]
 ${CLOCK_OUT}    accessibility_id=CLOCK OUT
-${TOTAL_MINUTES}
 
 *** Keywords ***
 Home menu is displayed
@@ -34,6 +33,7 @@ Get remaining time
     [Documentation]    Get home screen remaining time of the shift
     ${TIME_STRING}=    Get Element Attribute    ${REMAINING_TIME}    content-desc
     ${TOTAL_MINUTES}=    Get Total Minutes    ${TIME_STRING}    # Custom Library
+    Set Suite Variable    ${TOTAL_MINUTES}
 
 Verify early Clock-Out time
     Wait Until Element Is Visible    ${CLOCK_OUT}    timeout=10
