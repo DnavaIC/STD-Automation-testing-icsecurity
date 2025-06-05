@@ -12,6 +12,7 @@ ${ANDROID_BACK}          //*[contains(@class, 'ImageButton')]
 ${PHONE_INPUT}           //*[contains(@class, 'EditText')]
 ${CONTINUE_LOGIN}        accessibility_id=CONTINUE
 ${LABEL_HOME}            accessibility_id=Home
+${CLOSE_WINDOW}    //android.view.View[@content-desc="CONFIRM SHIFT"]/android.widget.Button
 
 
 *** Keywords ***
@@ -39,13 +40,20 @@ Input phone number and login
   Input Text    ${PHONE_INPUT}    %{PHONE_NUMBER}
   Capture Page Screenshot
   Click Element    ${CONTINUE_LOGIN}
-
-  Wait Until Element Is Visible    ${ALLOW_ALERT}    timeout=15
+  Wait Until Element Is Visible    ${ALLOW_ALERT}    timeout=30s
   Click Element    ${ALLOW_ALERT}
 
-
+Close confirm shift notification
+  ${IS_VISIBLE}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${CLOSE_WINDOW}    timeout=10s
+  IF    ${IS_VISIBLE}
+    Click Element    ${CLOSE_WINDOW}
+  ELSE
+    Log    Element "notification is not displayed"
+  END
+  
 Login to Inter-Con App
     Accept android location permission
     Accept android activity permission
     Configure all time location
     Input phone number and login
+    Close confirm shift notification
