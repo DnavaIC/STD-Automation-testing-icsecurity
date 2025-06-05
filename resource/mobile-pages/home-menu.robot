@@ -9,6 +9,7 @@ ${ASSIGNED_EQUIPMENT_BTN}    accessibility_id=Assigned\nEquipment
 ${ASSIGNED_EQUIPMENT_SCREEN}    xpath=//android.view.View[@content-desc]
 ${REMAINING_TIME}    //android.view.View[@content-desc][11]
 ${CLOCK_OUT}    accessibility_id=CLOCK OUT
+${TOOLS}    xpath=//android.widget.Button[@content-desc][5]
 
 *** Keywords ***
 Home menu is displayed
@@ -39,3 +40,8 @@ Verify early Clock-Out time
     Wait Until Element Is Visible    ${CLOCK_OUT}    timeout=10
     Click Element    ${CLOCK_OUT}
     Page Should Contain Text    ${TOTAL_MINUTES}
+
+Navigate to Tools Section
+    [Documentation]    Navigate to Tools section from home menu
+    Click Element    ${TOOLS}
+    
