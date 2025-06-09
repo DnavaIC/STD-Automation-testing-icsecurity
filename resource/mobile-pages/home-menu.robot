@@ -21,27 +21,32 @@ Go to Assigned Equipment
     Click Element    ${STARS_CORNER}
     Wait Until Element Is Visible    ${ASSIGNED_EQUIPMENT_BTN}    timeout=10
     Click Element    ${ASSIGNED_EQUIPMENT_BTN}
+    Capture Page Screenshot
 
 Check user with no equipment assigned
     [Documentation]    Check empty list message
     Sleep    10s
     Wait Until Element Is Visible    ${ASSIGNED_EQUIPMENT_SCREEN}    timeout=10
-    Capture Page Screenshot    
     Get Element Attribute    ${ASSIGNED_EQUIPMENT_SCREEN}    attribute=content-desc
     Page Should Contain Text    No equipment assigned
+    Capture Page Screenshot
 
 Get remaining time
     [Documentation]    Get home screen remaining time of the shift
     ${TIME_STRING}=    Get Element Attribute    ${REMAINING_TIME}    content-desc
     ${TOTAL_MINUTES}=    Get Total Minutes    ${TIME_STRING}    # Custom Library
     Set Suite Variable    ${TOTAL_MINUTES}
+    Capture Page Screenshot
 
 Verify early Clock-Out time
     Wait Until Element Is Visible    ${CLOCK_OUT}    timeout=10
     Click Element    ${CLOCK_OUT}
     Page Should Contain Text    ${TOTAL_MINUTES}
+    Capture Page Screenshot
 
 Navigate to Tools Section
     [Documentation]    Navigate to Tools section from home menu
     Click Element    ${TOOLS}
+    Sleep    3s
+    Capture Page Screenshot
     
