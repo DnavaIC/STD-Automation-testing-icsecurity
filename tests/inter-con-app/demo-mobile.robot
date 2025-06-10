@@ -19,6 +19,7 @@ Validate wrong phone number error message
     AND Input phone number and login
     AND Close confirm shift notification
     THEN Home menu is displayed
+    AND Shut down App
 
 Check user with no equipment assigned
     [Documentation]    Validate user with empty items assigned
@@ -29,6 +30,7 @@ Check user with no equipment assigned
     WHEN Home menu is displayed
     AND Go to Assigned Equipment
     THEN Check user with no equipment assigned
+    AND Shut down App
 
 Verify remaining time in Early Clock-Out
     [Documentation]    Validate clock out remain minutes message
@@ -40,6 +42,7 @@ Verify remaining time in Early Clock-Out
     AND Verify CLOCK_IN status
     AND Get remaining time
     THEN Verify early Clock-Out time
+    AND Shut down App
 
 Verify No picture error message is displayed in Weapon Inventory
     [Documentation]    Submit weapon form without picture
@@ -54,6 +57,7 @@ Verify No picture error message is displayed in Weapon Inventory
     AND Fill all Vehicle inputs
     AND Tap Submit button
     THEN Validate error message when subitting without picture
+    AND Shut down App
 
 Testing locators or steps
     [Documentation]    Just for test some locators or keywords
@@ -64,3 +68,4 @@ Testing locators or steps
     Verify CLOCK_IN status
     Navigate to Tools Section
     Navigate to Shift tools section
+    AND Shut down App
