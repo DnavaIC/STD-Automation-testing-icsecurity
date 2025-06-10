@@ -1,8 +1,9 @@
 *** Settings ***
 
-Resource    ../../resource/utils/appiumDriver.robot
+# Pages
 Resource    ../../resource/mobile-pages/login-kiosk-NA.robot
 Resource    ../../resource/mobile-pages/home-menu.robot
+Resource    ../../resource/mobile-pages/Tools-section.robot
 
 *** Variables ***
 ${RESOURCE_PATH}    D:/Repos/STD-Mobile-testing-icsecurity/resource
@@ -20,7 +21,7 @@ Login Inter-Con security App NO AUTH
 
 Check user with no equipment assigned
     [Documentation]    Pre-conditions: User phone number with no equipment assigned
-    [Tags]    demo    mobile    kioskNA    Profile
+    [Tags]    demo    mobile
     GIVEN Android Inter-con security Application KIOSK-NA
     AND Login to Inter-Con App
     WHEN Home menu is displayed
@@ -28,9 +29,21 @@ Check user with no equipment assigned
     THEN Check user with no equipment assigned
 
 Verify remaining time in Early Clock-Out
-    [Tags]    testing
+    [Tags]    demo    mobile
     GIVEN Android Inter-con security Application KIOSK-NA
     AND Login to Inter-Con App
     WHEN Home menu is displayed
     AND Get remaining time
     THEN Verify early Clock-Out time
+
+Verify No picture error message is displayed in Weapon Inventory
+    [Tags]    demo    mobile
+    GIVEN Android Inter-con security Application KIOSK-NA
+    AND Login to Inter-Con App
+    WHEN Home menu is displayed
+    AND Navigate to Tools Section
+    AND Navigate to Shift tools section
+    AND Click Vehicle Inventory
+    AND Fill all Vehicle inputs
+    AND Tap Submit button
+    THEN Validate error message when subitting without picture

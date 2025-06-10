@@ -30,6 +30,7 @@ Configure all time location
   Wait Until Element Is Visible    ${CONFIGURE_LOCATION}
   Capture Page Screenshot
   Click Element  ${CONFIGURE_LOCATION}
+  Wait Until Element Is Visible    ${ALLOW_ALL_TIME}    timeout=5s
   Click Element  ${ALLOW_ALL_TIME}
   Capture Page Screenshot
   Click Element  ${ANDROID_BACK} 
@@ -44,8 +45,7 @@ Input phone number and login
   Click Element    ${ALLOW_ALERT}
 
 Close confirm shift notification
-    Run Keyword And Continue On Failure    Wait Until Page Contains Element  ${CLOSE_WINDOW}    timeout=10s
-    Run Keyword And Continue On Failure    Click Element  ${CLOSE_WINDOW}
+    Run Keyword And Ignore Error    Click Element    ${CLOSE_WINDOW}
   
 Login to Inter-Con App
     Accept android location permission
