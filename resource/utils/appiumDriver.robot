@@ -20,3 +20,6 @@ Android Inter-con security Application KIOSK-NA
   ...  deviceName=${ANDROID_DEVICE_NAME}
   ...  appPackage=${ANDROID_APP_PACKAGE_KIOSKNA}
   ...  appActivity=${ANDROID_APP_ACTIVITY_KIOSKNA}
+
+Shut down App
+  Close Application

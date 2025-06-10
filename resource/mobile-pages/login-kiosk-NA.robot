@@ -45,7 +45,9 @@ Input phone number and login
   Click Element    ${ALLOW_ALERT}
 
 Close confirm shift notification
-    Run Keyword And Ignore Error    Click Element    ${CLOSE_WINDOW}
+  Sleep    5s
+  Run Keyword And Ignore Error    Wait Until Element Is Visible    ${CLOSE_WINDOW}    timeout=5s
+  Run Keyword And Ignore Error    Click Element    ${CLOSE_WINDOW}
   
 Login to Inter-Con App
     Accept android location permission
