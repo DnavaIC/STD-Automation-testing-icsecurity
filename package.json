@@ -9,6 +9,7 @@
   },
   "scripts": {
     "demo-mobile": "robot -i demo --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/demo-mobile.robot",
-    "demo-web": "robot --xunit junit-report.xml --outputdir ./output/reports tests/gantt/demo-web.robot"
+    "demo-web": "robot --xunit junit-report.xml --outputdir ./output/reports tests/gantt/demo-web.robot",
+    "test": "robot -i test --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/demo-mobile.robot"
   }
 }

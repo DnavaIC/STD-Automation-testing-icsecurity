@@ -4,14 +4,28 @@ Library    AppiumLibrary  timeout=10
 Library    ../Library/DemoLibrary.py
 
 *** Variables ***
+# HEADER
 ${STARS_CORNER}    xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[1]
+
+# PROFILE
 ${ASSIGNED_EQUIPMENT_BTN}    accessibility_id=Assigned\nEquipment
 ${ASSIGNED_EQUIPMENT_SCREEN}    xpath=//android.view.View[@content-desc]
+
+# SHIFT
 ${REMAINING_TIME}    //android.view.View[@content-desc][11]
 ${CLOCK_OUT}    accessibility_id=CLOCK OUT
+
+# FOOTER
 ${TOOLS}    xpath=//android.widget.Button[@content-desc][5]
 
 *** Keywords ***
+Verify CLOCK_IN status
+    ${is_clocked_in}=    Run Keyword And Return Status    Page Should Contain Text    CLOCKED IN
+    Capture Page Screenshot
+    IF    not ${is_clocked_in}
+        Skip    Status is not CLOCKED IN
+    END
+
 Home menu is displayed
     Wait Until Element Is Visible    accessibility_id=Home    timeout=10
     Capture Page Screenshot
