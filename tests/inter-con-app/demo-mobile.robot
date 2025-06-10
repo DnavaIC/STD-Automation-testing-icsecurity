@@ -4,8 +4,6 @@ Resource    ../../resource/mobile-pages/login-kiosk-NA.robot
 Resource    ../../resource/mobile-pages/home-menu.robot
 Resource    ../../resource/mobile-pages/Tools-section.robot
 
-*** Variables ***
-${RESOURCE_PATH}    D:/Repos/STD-Mobile-testing-icsecurity/resource
 
 *** Test Cases ***
 Validate wrong phone number error message
@@ -57,15 +55,4 @@ Verify No picture error message is displayed in Weapon Inventory
     AND Fill all Vehicle inputs
     AND Tap Submit button
     THEN Validate error message when subitting without picture
-    AND Shut down App
-
-Testing locators or steps
-    [Documentation]    Just for test some locators or keywords
-    [Tags]    test
-    Android Inter-con security Application KIOSK-NA
-    Login to Inter-Con App
-    Home menu is displayed
-    Verify CLOCK_IN status
-    Navigate to Tools Section
-    Navigate to Shift tools section
     AND Shut down App
