@@ -6,6 +6,19 @@ Resource    ../../resource/mobile-pages/Tools-section.robot
 
 
 *** Test Cases ***
+Input Wrong Phone Number
+    [Documentation]    Input wrong phone number from environment variables
+    ...    Pre-conditions: Android Inter-con security Application KIOSK-NA
+    [Tags]    test
+    GIVEN Android Inter-con security Application KIOSK-NA
+    AND Accept android location permission
+    AND Accept android activity permission
+    AND Configure all time location
+    WHEN Input WRONG phone number
+    AND Tap continue login button
+    THEN Verify error message when wrong number is input
+    
+
 Verify No picture error message is displayed in Weapon Inventory
     [Documentation]    Submit weapon form without picture
     ...    Pre-conditions: No preconditions

@@ -15,7 +15,6 @@ ${LABEL_HOME}            accessibility_id=Home
 ${CLOSE_WINDOW}          //android.view.View[@content-desc="CONFIRM SHIFT"]/android.widget.Button
 ${INVALID_NUMBER}        //android.view.View[@content-desc="Invalid phone number"]
 
-
 *** Keywords ***
 Accept android location permission
   Wait Until Page Contains Element  ${WHILE_USING_APP} 
@@ -61,7 +60,7 @@ Allow calls alert
 
 Verify error message when wrong number is input
   [Documentation]    Verify error message when wrong phone number is input
-  Wait Until Element Is Visible    ${ALLOW_ALERT}    timeout=30s
+  Wait Until Element Is Visible    ${INVALID_NUMBER}    timeout=30s
   Capture Page Screenshot
   Page Should Contain Text    Invalid phone number
 
@@ -75,5 +74,6 @@ Login to Inter-Con App
     Accept android activity permission
     Configure all time location
     Input VALID phone number
-    
+    Tap continue login button
+    Allow calls alert
     Close confirm shift notification
