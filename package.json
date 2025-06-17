@@ -8,7 +8,9 @@
     "appium-uiautomator2-driver": "^4.1.5"
   },
   "scripts": {
-    "demo-mobile": "robot -i testing --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/demo-mobile.robot",
-    "demo-web": "robot --xunit junit-report.xml --outputdir ./output/reports tests/gantt/demo-web.robot"
+    "demo-mobile": "robot -i demo --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/demo-mobile.robot",
+    "demo-web": "robot --xunit junit-report.xml --outputdir ./output/reports tests/gantt/demo-web.robot",
+    "test": "robot -i test --xunit junit-report.xml --outputdir ./output/reports tests/inter-con-app/demo-mobile.robot",
+    "metrics": "robotmetrics --inputpath output/reports"
   }
 }
