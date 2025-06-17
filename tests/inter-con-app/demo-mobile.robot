@@ -6,17 +6,19 @@ Resource    ../../resource/mobile-pages/Tools-section.robot
 
 
 *** Test Cases ***
-Validate wrong phone number error message
-    [Documentation]    Login with wrong phone number
-    ...    Pre-conditions: use wrong phone number
-    [Tags]    login    mobile
-    Given Android Inter-con security Application KIOSK-NA
-    AND Accept android location permission
-    AND Accept android activity permission
-    AND Configure all time location
-    AND Input phone number and login
-    AND Close confirm shift notification
-    THEN Home menu is displayed
+Verify No picture error message is displayed in Weapon Inventory
+    [Documentation]    Submit weapon form without picture
+    ...    Pre-conditions: No preconditions
+    [Tags]    demo    mobile
+    GIVEN Android Inter-con security Application KIOSK-NA
+    AND Login to Inter-Con App
+    WHEN Home menu is displayed
+    AND Navigate to Tools Section
+    AND Navigate to Shift tools section
+    AND Click Vehicle Inventory
+    AND Fill all Vehicle inputs
+    AND Tap Submit button
+    THEN Validate error message when subitting without picture
     AND Shut down App
 
 Check user with no equipment assigned
@@ -40,19 +42,4 @@ Verify remaining time in Early Clock-Out
     AND Verify CLOCK_IN status
     AND Get remaining time
     THEN Verify early Clock-Out time
-    AND Shut down App
-
-Verify No picture error message is displayed in Weapon Inventory
-    [Documentation]    Submit weapon form without picture
-    ...    Pre-conditions: No preconditions
-    [Tags]    demo    mobile
-    GIVEN Android Inter-con security Application KIOSK-NA
-    AND Login to Inter-Con App
-    WHEN Home menu is displayed
-    AND Navigate to Tools Section
-    AND Navigate to Shift tools section
-    AND Click Vehicle Inventory
-    AND Fill all Vehicle inputs
-    AND Tap Submit button
-    THEN Validate error message when subitting without picture
     AND Shut down App

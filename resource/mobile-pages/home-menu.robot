@@ -40,10 +40,10 @@ Go to Assigned Equipment
 Check user with no equipment assigned
     [Documentation]    Check empty list message
     Sleep    10s
+    Capture Page Screenshot
     Wait Until Element Is Visible    ${ASSIGNED_EQUIPMENT_SCREEN}    timeout=10
     Get Element Attribute    ${ASSIGNED_EQUIPMENT_SCREEN}    attribute=content-desc
     Page Should Contain Text    No equipment assigned
-    Capture Page Screenshot
 
 Get remaining time
     [Documentation]    Get home screen remaining time of the shift
