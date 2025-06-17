@@ -4,7 +4,13 @@ Library  Browser
 Documentation    A resource file for demo Gantt using playwight library for robot framework, login page.
 
 *** Variables ***
-${PAGE}    https://gantt-qa.bubo.io/#/login  
+${PAGE}    https://gantt-qa.bubo.io/#/login
+${LOGIN_BTN}    //button[@type='button']
+${ICS_CORPORATE_BTN}   (//input[@value='ICS-Corporate-Login'])[2]
+${EMAIL_INPUT}    //input[@type='email']
+${SUBMIT_BTN}    //input[@type='submit']
+${PASSWORD_INPUT}    //input[@name='passwd']
+${GANTT_BTN}    //img[@src='/gantt.svg']
 
 *** Keywords ***
 Gantt Login Page is open
@@ -14,18 +20,26 @@ Gantt Login Page is open
     Get Text    span    contains    Bubo Gantt Access
 
 Click Corporate login
-    Click    //button[@type='button']
-    Wait For Elements State    (//input[@value='ICS-Corporate-Login'])[2]    enabled    10
-    Click    (//input[@value='ICS-Corporate-Login'])[2]
+    Click    ${LOGIN_BTN}
+    Wait For Elements State    ${ICS_CORPORATE_BTN}    enabled    10
+    Click    ${ICS_CORPORATE_BTN}
 
 Input login credentials
 
-    Fill Text    //input[@type='email']    %{GANTT_USERNAME}
+    Fill Text    ${EMAIL_INPUT}    %{GANTT_USERNAME}
     Take Screenshot
-    Click        //input[@type='submit']
-    Fill Text    //input[@name='passwd']    %{GANTT_PASSWORD}
+    Click    ${SUBMIT_BTN}
+    Fill Text    ${PASSWORD_INPUT}    %{GANTT_PASSWORD}
     Take Screenshot
-    Click            //input[@type='submit']
-    Log To Console    "Waiting for page to render... (20s)"
-    Sleep    20s
+    Click            ${SUBMIT_BTN}
+    Log To Console    "\nWaiting for page to render... "
+    Wait For Elements State    ${GANTT_BTN}    enabled    40s
+    # Sleep    20s
     Take Screenshot
+
+Login into Gantt Web
+    [Documentation]    Perform login into Gantt web
+    Gantt Login Page is open
+    Click Corporate login
+    Input login credentials
+    
