@@ -51,9 +51,16 @@ appium
 Connect your hardware device / turn on your emulation device. 
 
 4. Run your test
+
+#### For web testing
 clone the repository and run 
 ```
-npm test
+npm run demo-web
+```
+
+#### For mobile testing
+```
+npm run demo-mobile
 ```
 
 
