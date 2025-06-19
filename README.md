@@ -11,6 +11,7 @@ Please go to [IC security - mobile automation wiki](https://github.com/DnavaIC/S
 
 1. with Node and Python pre-installed
 
+
 ```
 npm i --location=global appium
 ```
