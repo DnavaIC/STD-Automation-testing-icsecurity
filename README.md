@@ -9,7 +9,7 @@ Please go to [IC security - mobile automation wiki](https://github.com/DnavaIC/S
 
 ## Quick run setup (Advanced)
 
-1. with Node and Python pre-installed
+### 1. with Node and Python pre-installed
 
 
 ```
@@ -19,13 +19,10 @@ npm i --location=global appium
 appium driver install uiautomator2
 ```
 ```
-pip install robotframework
-```
-```
-pip install robotframework-appiumlibrary
+pip install robotframework robotframework-appiumlibrary robotframework-browser
 ```
 
-2. Install Android Studio, which includes SDK and install JDK binarie.
+### 2. (only for mobile testing) Install Android Studio, which includes SDK and install JDK binarie.
 
 Once you install your tools and extract the corresponding path, create new system variables.
 
@@ -43,7 +40,7 @@ path: C:\java\jdk-23.0.2\bin
 
 Don't forget to add the same two variables in path system variables
 
-3. Initialize appium server
+### 3. (only for mobile testing) Initialize appium server
 
 run appium command 
 ```
@@ -51,7 +48,7 @@ appium
 ```
 Connect your hardware device / turn on your emulation device. 
 
-4. Run your test
+### 4. Run your test
 
 #### For web testing
 clone the repository and run 
