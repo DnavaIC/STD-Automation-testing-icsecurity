@@ -21,9 +21,6 @@ appium driver install uiautomator2
 ```
 pip install robotframework robotframework-appiumlibrary robotframework-browser
 ```
-```
-pip install robotframework-browser  
-```
 
 ### 2. (only for mobile testing) Install Android Studio, which includes SDK and install JDK binarie.
 
